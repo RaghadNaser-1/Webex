@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="wrapper">
+	<div class="glasspane">
+		<h1>Webex Teams Authentication Demo</h1>
+	</div>
+	<div class="table">
+		<table>
+			<tr>
+				<td>Client ID:</td>
+				<td><input id="clientId" /></td>
+			</tr>
+			<tr>
+				<td>Client Secret:</td>
+				<td><input id="clientSecret" /></td>
+			</tr>
+			<tr>
+				<td>Redirect URI:</td>
+				<td><input id="redirectUri" /><button name="codeButton" type="button" onClick="codeClick()">Request Auth Code</button></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="table">
+		<table>
+			<tr>
+				<td>Auth Code:</td>
+				<td><input id="code" readonly /> <button id="tokenButton" type="button" hidden onClick="tokenClick()">Request Access Token</button></td>
+			</tr>
+			<tr>
+				<td>Access Token:</td>
+				<td><textarea id="token" readonly style="vertical-align: top"></textarea></td>
+			</tr>
+			<tr>
+				<td>Refresh Token:</td>
+				<td><textarea id="refresh" readonly style="vertical-align: top"></textarea></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="table">
+		<table>
+			<tr>
+				<td>Refresh the token:</td>
+				<td><button id="tokenRefReshButton" type="button" hidden onClick="tokenRefreshClick()">Refresh Access Token</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
